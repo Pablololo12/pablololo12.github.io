@@ -42,62 +42,6 @@
 			</div>
 			
 		</div>
-		
-		<div class="w3-container w3-row" style="margin-top:10%; position: relative; width:100%;">
-			<div class="w3-col s6 w3-card-4 w3-content w3-display-container">
-			<a href="https://github.com/Pablololo12/utilities" id="link1">
-			  <img class="mySlides w3-hover-opacity" src="/images/cpu-tuner.png" style="width: 100%">
-			  </a>
-			</div>
-			<div class="w3-col s6 w3-card-4 w3-content w3-display-container">
-			<a href="index.html" id="link2">
-			  <img class="mySlides2 w3-hover-opacity" src="/images/spheres.png" style=" width: 100%">
-			  </a>
-			</div>
-		</div>
-
-		<div class="w3-container w3-center" style="margin-top:-20%; position: absolute; width: 100%">
-			  <a class="w3-btn w3-right" onclick="plusDivs(1)">&#10095;</a>
-			  <a class="w3-btn w3-left" onclick="plusDivs(-1)">&#10094;</a>
-		</div>
-
-		<script>
-		var slideIndex = 1;
-		var slideIndex2 = 2;
-		var id=0;
-		showDivs(slideIndex, slideIndex2);
-
-		function plusDivs(n) {
-		  showDivs(slideIndex += n, slideIndex2 += n);
-		}
-		function plus() {
-			showDivs(slideIndex += 1, slideIndex2 += 1);
-		}
-
-		function showDivs(n, n2) {
-		  clearTimeout(id);
-		  var i;
-		  var imagenes = new Array(2);
-		  imagenes[0]='/images/cpu-tuner.png';
-		  imagenes[1]='/images/spheres.png';
-		  var links = new Array(2);
-		  links[0]="https://github.com/Pablololo12/utilities";
-		  links[1]="/index.html";
-		  var x = document.getElementsByClassName("mySlides");
-		  var y = document.getElementsByClassName("mySlides2");
-		  var x2 = document.getElementById("link1");
-		  var y2 = document.getElementById("link2");
-		  if (n > imagenes.length) {slideIndex = 1}    
-		  if (n < 1) {slideIndex = imagenes.length}
-		  if (n2 > imagenes.length) {slideIndex2 = 1}    
-		  if (n2 < 1) {slideIndex2 = imagenes.length}
-		  x[0].src = imagenes[slideIndex-1];
-		  y[0].src = imagenes[slideIndex2-1];
-		  x2.href = links[slideIndex-1];
-		  y2.href = links[slideIndex2-1];
-		  id=setTimeout(plus, 5000); 
-		}
-		</script>
 
 	</body>
 </html>
