@@ -2,16 +2,42 @@
 <html>
 	<title>Pablo</title>
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
-	<link rel="stylesheet" href="/stylesheets/w3.css">
-
 	<style>
 		head, body {
-		  font-family: "Allerta Stencil", Sans-serif;
+		  font-family: Sans-serif;
 		  display: inline;
-		  background-color: #448FA3;
-		  color: #ffffff;
 		  font-size: 18px;
+		}
+
+		img {
+			border-radius: 50%;
+		}
+
+		.flex-container {
+			display: -webkit-flex;
+			display: flex;  
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+			text-align: center;
+		}
+
+		.flex-container > * {
+			padding: 15px;
+			-webkit-flex: 1 100%;
+			flex: 1 100%;
+		}
+
+		.nav {
+			text-align: center;
+		}
+
+		.section {
+			text-align: center;
+		}
+
+		@media all and (min-width: 600px) {
+			.nav {text-align:center;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+			.section {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
 		}
 
 	</style>
@@ -25,23 +51,18 @@
 
 	<body>
 
-		<div class="w3-row w3-center" style="margin-top: 10%">
+		<div class="flex-container">
 
-			<div class="w3-col" style="width:100%">
-				<img alt="Profile" class="w3-circle" height="233" size="233" src="https://avatars3.githubusercontent.com/u/8988034?v=3&amp;s=466" width="233">
+			<div class="nav">
+				<img alt="Profile" height="200px" width="200px" float="right" src="https://avatars3.githubusercontent.com/u/8988034?v=3&amp;s=466"><br><br>
+				<b><a href="https://github.com/Pablololo12">@Pablololo12</a></b><br><br>
+				pabloheralm@gmail.com<br><br>
+				<b><a href="https://es.linkedin.com/in/pablo-hernandez-almudi-8a669812b"> LinkedIn</a></b>
 			</div>
-			<div class="w3-col w3-center" style="width:100%">
-				<h2><b><a href="https://github.com/Pablololo12">@Pablololo12</a></b></h2>
+			<div class="section">
+				<p>I'm a student of Computer Engineering at the University of Zaragoza, Spain.</p>
 			</div>
-			<div class="w3-col w3-center" style="width:100%">
-				I'm a student of Computer Science at the University of Zaragoza, Spain.
-			</div>
-			<div class="w3-col w3-center" style="width:100%">
-				<p>You can find me on:</p>
-				<b><a href="https://es.linkedin.com/in/pablo-hernandez-almudi-8a669812b"> LinkedIn</a> or via e-mail pabloheralm@gmail.com</b>
-			</div>
-			
+
 		</div>
-
 	</body>
 </html>
