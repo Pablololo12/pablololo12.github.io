@@ -4,9 +4,9 @@
 
 	<style>
 		head, body {
-		  font-family: Sans-serif;
+		  font-family: "Verdana", Sans-serif;
 		  display: inline;
-		  font-size: 18px;
+		  background-color: #ffffff;
 		}
 
 		img {
@@ -22,7 +22,9 @@
 		}
 
 		.flex-container > * {
+			margin-top: 10%;
 			padding: 15px;
+			padding-right: 30px;
 			-webkit-flex: 1 100%;
 			flex: 1 100%;
 		}
@@ -32,11 +34,12 @@
 		}
 
 		.section {
-			text-align: center;
+			text-align: left;
+			padding-right: 15%;
 		}
 
 		@media all and (min-width: 700px) {
-			.nav {text-align:center;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+			.nav {text-align:right;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
 			.section {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
 		}
 
@@ -54,13 +57,16 @@
 		<div class="flex-container">
 
 			<div class="nav">
-				<img alt="Profile" height="200px" width="200px" float="right" src="https://avatars3.githubusercontent.com/u/8988034?v=3&amp;s=466"><br><br>
-				<b><a href="https://github.com/Pablololo12">@Pablololo12</a></b><br><br>
+				<img alt="Profile" height="200px" width="200px" float="right" src="https://avatars3.githubusercontent.com/u/8988034?v=3&amp;s=466"><br>
+				<h3><b>Pablo Hernández</b></h3>
 				pabloheralm@gmail.com<br><br>
-				<b><a href="https://es.linkedin.com/in/pablo-hernandez-almudi-8a669812b"> LinkedIn</a></b>
+				<a href="https://github.com/Pablololo12">Github</a><br>
+				<a href="https://es.linkedin.com/in/pablo-hernandez-almudi-8a669812b">LinkedIn</a>
 			</div>
 			<div class="section">
 				<p>I'm a student of Computer Engineering at the University of Zaragoza, Spain.</p>
+				<p>For my final degree proyect I'm making a Linux <a href="https://github.com/Pablololo12/governor-tfg">Governor</a> based on a PID controler in order to keep a constant temperature.</p>
+				<p>I also made a lot of interesting proyects like a <a href="https://github.com/Pablololo12/raytracer">Ray Tracer</a>, <a href="https://github.com/Pablololo12/photonmapping">Photon Mapper</a> or a <a href="https://github.com/Pablololo12/AlgoritmiaBasica/tree/master/Huffman">Huffman compressor</a>. All of them made with performance as objetive.</p>
 			</div>
 
 		</div>
