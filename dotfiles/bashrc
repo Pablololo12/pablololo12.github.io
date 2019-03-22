@@ -1,0 +1,18 @@
+# Prompt Config
+PS1="\$(if [ \$? == 0 ]; then echo -e '\e[0;32m'; else echo -e '\e[0;31m'; fi)""\W\e[0m "
+
+# Aliases
+alias 'dus=du -sckx * | sort -nr'
+alias lh='ls -a | egrep "^\."'
+alias 'rm=rm -i'
+alias todo='vim ~/todo.md'
+alias ll="ls -l"
+
+# Environment config
+export CLICOLOR=1
+export HISTCONTROL=ignoreboth
+
+# Paths config
+export ANDROID_HOME=/Users/pablo/Library/Android/sdk/
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/esp/xtensa-esp32-elf/bin
+export IDF_PATH=$HOME/esp/esp-idf

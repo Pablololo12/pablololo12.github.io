@@ -1,0 +1,9 @@
+TAB: menu-complete
+set show-all-if-ambiguous on
+set colored-stats on
+set completion-prefix-display-length 3
+set visible-stats On
+set completion-ignore-case On
+
+"\C-p":history-search-backward
+"\C-n":history-search-forward
