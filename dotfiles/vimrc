@@ -1,29 +1,5 @@
 set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-"
-" NERDTree
-Plugin 'scrooloose/nerdtree'
-"
-" NERDTreeTabs: integrate NERDTree and tabs, so it's still open after new
-" tab.
-Plugin 'jistr/vim-nerdtree-tabs'
-
-" Vim-Airline - muestra el modo y codificacion de fichero, etc
-Plugin 'bling/vim-airline'
-
-" Fugitive - Integracion de vim con git
-Plugin 'tpope/vim-fugitive'
-
-" Color de la terminal = carloscuesta/materialshell
-Plugin 'christoomey/vim-tmux-navigator'
-call vundle#end()            " required
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 
 set number
 set ruler
@@ -46,13 +22,14 @@ set cindent
 nnoremap <S-Tab> :tabprevious<CR>
 nnoremap <Tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :Explore<CR>
 
 set laststatus=2
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -64,7 +41,7 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
+    \ set textwidth=80 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix

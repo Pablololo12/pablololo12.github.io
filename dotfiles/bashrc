@@ -6,7 +6,7 @@ alias 'dus=du -sckx * | sort -nr'
 alias lh='ls -a | egrep "^\."'
 alias 'rm=rm -i'
 alias todo='vim ~/todo.md'
-alias ll="ls -l"
+alias ll="ls -lFhHL"
 
 # Environment config
 export CLICOLOR=1
