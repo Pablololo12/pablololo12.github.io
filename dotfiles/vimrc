@@ -31,9 +31,27 @@ nnoremap <C-H> <C-W><C-H>
 
 map <C-n> :Explore<CR>
 
+set noshowmode
+
+function! GetMode()
+	let m = mode()
+	if m=='i'
+		return 'Insert'
+	elseif m=='n'
+		return 'Normal'
+	elseif m=='R'
+		return 'Replace'
+	elseif m==?'c'
+		return 'Command'
+	else
+		return 'Visual'
+	endif
+endfunction
+
 set laststatus=2
 set statusline=
-set statusline+=%1*\ \[%n]								"Buffernumber
+set statusline+=%5*\ %{GetMode()}
+set statusline+=\ %1*\ \[%n]							"Buffernumber
 set statusline+=\ %2*\ %<%f								"Filepath
 set statusline+=%m										"modified flag
 set statusline+=\ %3*%=									"Space
