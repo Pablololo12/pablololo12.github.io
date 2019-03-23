@@ -21,7 +21,7 @@ set cindent
 " Tab navigation like Firefox.
 nnoremap <S-Tab> :tabprevious<CR>
 nnoremap <Tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
+nnoremap <C-t>   :tabnew<CR>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -32,10 +32,24 @@ nnoremap <C-H> <C-W><C-H>
 map <C-n> :Explore<CR>
 
 set laststatus=2
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+set statusline=
+set statusline+=%1*\ \[%n]								"Buffernumber
+set statusline+=\ %2*\ %<%f								"Filepath
+set statusline+=%m										"modified flag
+set statusline+=\ %3*%=									"Space
+set statusline+=%{''.(&fenc!=''?&fenc:&enc).''}\ \|		"Encoding
+set statusline+=\ %{&ff}\ \|							"Encoding2
+set statusline+=\ %{&expandtab?'spaces':'tabs'}\ \|		"Check use of spaces or tabs
+set statusline+=\ %Y									"Filetype
+set statusline+=\ %4*\ %c:%l/%L							"Col:line/numlines
+set statusline+=\ 										"Blank space at the end
 
-let base16colorspace = 256
-let g:airline_powerline_fonts=1
+hi User1 ctermbg=Blue
+hi User2 ctermbg=Green ctermfg=Black
+hi User3 ctermbg=Black
+hi User4 ctermbg=Magenta ctermfg=Black
+
+"let base16colorspace = 256
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
