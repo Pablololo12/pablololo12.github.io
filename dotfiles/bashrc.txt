@@ -1,5 +1,6 @@
 # Prompt Config
-PS1="\$(if [ \$? == 0 ]; then echo -e '\e[0;32m'; else echo -e '\e[0;31m'; fi)""\W\e[0m "
+PS1="\$(if [ \$? == 0 ]; then echo '\[\e[32m\]'; else echo '\[\e[31m\]'; fi)\W\[\e[m\] "
+#PS1="\$(if [ \$? != 0 ]; then echo \$?; fi)\[\e[0;32m\]\W\[\e[m\] "
 
 # Aliases
 alias 'dus=du -sckx * | sort -nr'
