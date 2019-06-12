@@ -1,6 +1,5 @@
 # Prompt Config
-PS1="\$(if [ \$? == 0 ]; then echo '\[\e[32m\]'; else echo '\[\e[31m\]'; fi)\W\[\e[m\] "
-#PS1="\$(if [ \$? != 0 ]; then echo \$?; fi)\[\e[0;32m\]\W\[\e[m\] "
+PS1="\$(if [ \$? == 0 ]; then echo \[\e[32m\]; else echo \[\e[31m\]; fi)\W\[\e[m\] "
 
 # Aliases
 alias 'dus=du -sckx * | sort -nr'
@@ -12,8 +11,12 @@ alias ll="ls -lFhHL"
 # Environment config
 export CLICOLOR=1
 export HISTCONTROL=ignoreboth
+export HISTSIZE=10000
+export HISTFILESIZE=100000
 
 # Paths config
-export ANDROID_HOME=/Users/pablo/Library/Android/sdk/
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/esp/xtensa-esp32-elf/bin
+export ANDROID_HOME=$(HOME)/Library/Android/sdk/
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/esp/xtensa-esp32-elf/bin:$HOME/Library/Python/3.7/bin
 export IDF_PATH=$HOME/esp/esp-idf
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

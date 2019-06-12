@@ -1,16 +1,17 @@
 set nocompatible
-"filetype plugin indent on    " required
+syntax on
+filetype plugin on
 
 set number
+set relativenumber
 set ruler
-syntax on
 set autoindent
 set smartindent
 set encoding=utf-8
 set t_Co=256
 set background=dark
 set hlsearch
-set colorcolumn=80
+set colorcolumn=81
 set mouse=a
 
 set tabstop=4
@@ -18,10 +19,29 @@ set shiftwidth=4
 set noexpandtab
 set cindent
 
+set wildmenu
+set completeopt=longest,menuone
+
 " Tab navigation like Firefox.
 nnoremap <S-Tab> :tabprevious<CR>
 nnoremap <Tab>   :tabnext<CR>
 nnoremap <C-t>   :tabnew<CR>
+map <C-n> :Vexplore<CR>
+
+" FileExplorer
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_winsize=15
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+
+" Treat visual lines as lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -29,8 +49,19 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-map <C-n> :Explore<CR>
+" Toggle fold
+nnoremap <Space> za
+vnoremap <Space> za
 
+function! MyFoldText()
+	let line = getline(v:foldstart)
+	return line . '…'
+endfunction
+set foldtext=MyFoldText()
+
+hi Folded ctermbg=Black
+
+" Line
 set noshowmode
 
 function! GetMode()
@@ -67,13 +98,31 @@ hi User2 ctermbg=Green ctermfg=Black
 hi User3 ctermbg=Black
 hi User4 ctermbg=Magenta ctermfg=Black
 
-"let base16colorspace = 256
+function MarkdownLevel()
+	let h = matchstr(getline(v:lnum), '^#\+')
+	if empty(h)
+		return "="
+	else
+		return ">" . len(h)
+	endif
+endfunction
 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=80 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+au BufNewFile,BufRead *.md
+	\ set foldexpr=MarkdownLevel() |
+	\ set foldmethod=expr |
+	\ set foldlevelstart=99
+
+au BufNewFile,BufRead todo.md
+	\ set foldlevelstart=-1
+
+au BufNewFile,BufRead *.py,*.hs
+	\ set tabstop=4 |
+	\ set softtabstop=4 |
+	\ set shiftwidth=4 |
+	\ set textwidth=80 |
+	\ set expandtab |
+	\ set autoindent |
+	\ set fileformat=unix
+
+au BufNewFile,BufRead *.tex
+	\ set colorcolumn=0
