@@ -4,51 +4,105 @@
 		<head>
 				<meta charset="utf-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 				<title>Pablo's webpage</title>
 				<style type="text/css">
 					body{
 						margin:5% auto;
 						max-width:73%;
 						line-height:1.8;
-						font-size:18px;
-						color:#444444;
+						color:#000000;
 						padding:0 10px;
-						background: #f2f2f2;
-						font-family: Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-						font-size: 16px;
+						font-family: "JetBrains Mono", monospace, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+						font-optical-sizing: auto;
+						font-weight: 300;
+						font-style: normal;
+						font-size: 13px;
+						background-color: aquamarine;
+						background-image: radial-gradient(black 2px, transparent 2px),
+										radial-gradient(black 2px, transparent 2px);
+						background-position: 0 0, 25px 25px;
+						background-size: 50px 50px;
 					}
 					h1,h2,h3{
 						line-height:1.2
 					}
 					a {
 						border-bottom: 1px solid #444444;
-						color: #444444;
+						color: #000000;
 						text-decoration: none;
 					}
 					a:hover {border-bottom: 0;}
+					.box {
+						padding: 20px;
+						margin: 20px;
+						background-color: #fff;
+						border: 1px solid #ddd;
+						box-shadow: 10px -10px 0 rgba(0, 0, 0, 1);
+					}
+
+					.box-text {
+						background-color: peachpuff;
+					}
+
+					.box-title {
+						background-color: plum;
+					}
+
+					.box-links {
+						background-color: mediumseagreen;
+					}
+					
+					.box-entries {
+						background-color: mediumslateblue;
+					}
+
+					@media (min-width: 768px) {
+						p, h1, h2, h3, h4, h5, h6, ul, hr, .box {
+							max-width: 700px;
+							margin-left: auto;
+							margin-right: auto;
+						}
+					}
 				</style>
 				<base target="_blank">
 		</head>
 		<body>
-				<header><h1>Pablo Hern&aacutendez Almudi</h1></header>
+			<div class="box box-title">
+				<header>
+					<h1>Pablo Hern&aacutendez Almudi</h1>
+				</header>
 				<p>Welcome to my personal webpage!</p>
+			</div>
+			<div class="box box-links">
 				<p><a href="mailto:pabloheralm@gmail.com">pabloheralm@gmail.com</a>|<a href="https://scholar.google.com/citations?user=H-U2vTAAAAAJ">Scholar</a>|<a href="https://github.com/Pablololo12">github</a>|<a href="https://www.linkedin.com/in/pablo-hernandez-almudi-8a669812b/">LinkedIn</a>|<a href="https://twitter.com/Pablololo12">Twitter</a></p>
-				<hr>
+			</div>
+			<hr>
+			<div class="box box-text">
 				<h2>About me</h2>
-                <p>Performance modelling engineer in Arm, helping to design the new generation of Arm Cores.</p>
-				<p>I studied Computer Engineering at the University of Zaragoza, Spain. And a master's degree while working as a researcher at <a href="https://i3a.unizar.es/en">I3A</a>. I am most interested in the areas of IoT, Linux Kernel, power, thermal, control and performance. My bachelor's dissertation was focused on the control of temperature in mobile processors by using formal control techniques, a thesis that is being extended for my master's dissertation. I presented my work at the ARM Research Summit 2018 in Cambridge, link to the <a href="https://youtu.be/UnsXoUQFk3w?t=716">video</a> and Jornadas Sarteco 2018 in Teruel, Spain, link to the paper (in Spanish)<a href="https://doi.org/10.5281/zenodo.1403431">DOI 10.5281/zenodo.1403431</a>.
-
+				<p>
+					Performance modelling engineer in Arm, helping to design the new generation of Arm Cores.
+				</p>
+				<p>
+					I studied Computer Engineering at the University of Zaragoza, Spain. And a master's degree while working as a researcher at <a href="https://i3a.unizar.es/en">I3A</a>. I am most interested in the areas of IoT, Linux Kernel, power, thermal, control and performance. My bachelor's dissertation was focused on the control of temperature in mobile processors by using formal control techniques, a thesis that is being extended for my master's dissertation. I presented my work at the ARM Research Summit 2018 in Cambridge, link to the <a href="https://youtu.be/UnsXoUQFk3w?t=716">video</a> and Jornadas Sarteco 2018 in Teruel, Spain, link to the paper (in Spanish)<a href="https://doi.org/10.5281/zenodo.1403431">DOI 10.5281/zenodo.1403431</a>.
+				</p>
+			</div>
+			<div class="box box-entries">
 				<h2>Blog entries</h2>
 				<ul>
 					<li><a href="entries/hashcode.html">Hashcode and other hackathons</a></li>
 				</ul>
+			</div>
 
+			<div class="box box-links">
 				<h2>List of usefull links</h2>
 				<ul>
-						<li><a href="http://bettermotherfuckingwebsite.com/">bettermotherfuckingwebsite</a> My inspiration for this page</li>
 						<li><a href="https://www.kernel.org/doc/html/latest/process/coding-style.html">Linux Kernel Coding Style</a></li>
 						<li><a href="https://stackoverflow.com/questions/599365/what-is-your-favorite-c-programming-trick?rq=1"> C programming tricks </a></li>
 						<li><a href="https://github.com/Pablololo12/dotfiles">My dotfiles</a></li>
 				</ul>
+			</div>
 		</body>
 </html>
